@@ -45,15 +45,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PrintSequenceForm.cs">
+    <Compile Include="Controls\Direction.cs" />
+    <Compile Include="Controls\Orientation.cs" />
+    <Compile Include="Controls\RotatingLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintSequenceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PrintSequenceForm.Designer.cs">
+    <Compile Include="Forms\PrintSequenceForm.Designer.cs">
       <DependentUpon>PrintSequenceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="PrintSequenceForm.resx">
+    <EmbeddedResource Include="Forms\PrintSequenceForm.resx">
       <DependentUpon>PrintSequenceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -78,6 +83,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
