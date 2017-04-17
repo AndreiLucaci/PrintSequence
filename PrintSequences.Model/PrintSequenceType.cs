@@ -1,4 +1,4 @@
-﻿namespace PrintSequences.Engine
+﻿namespace PrintSequences.Model
 {
 	public enum PrintSequenceType
 	{
