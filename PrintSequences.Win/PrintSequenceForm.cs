@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PrintSequences.Win
 {
-	public partial class Form1 : Form
+	public partial class PrintSequenceForm : Form
 	{
-		public Form1()
+		public PrintSequenceForm()
 		{
 			InitializeComponent();
 		}
