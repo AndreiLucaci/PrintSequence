@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PrintSequences.Win.Forms;
 
 namespace PrintSequences.Win
 {
@@ -16,7 +17,7 @@ namespace PrintSequences.Win
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
+			Application.Run(new PrintSequenceForm());
 		}
 	}
 }
