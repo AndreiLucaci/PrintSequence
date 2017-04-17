@@ -1,4 +1,6 @@
-﻿namespace PrintSequences.Engine
+﻿using PrintSequences.Model;
+
+namespace PrintSequences.Engine
 {
 	public interface IPrintSequencesEngine
 	{

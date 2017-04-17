@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PrintSequences.Engine;
 
 namespace PrintSequences.Win.Forms
 {
@@ -20,13 +21,26 @@ namespace PrintSequences.Win.Forms
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			Task.Factory.StartNew(ProcessPageSequences, TaskCreationOptions.AttachedToParent
-			                                            | TaskCreationOptions.LongRunning);
+			var pages = Convert.ToInt32(pagesPerPage.Text);
+			var total = (int) totalPages.Value;
+			Task.Factory.StartNew(() => ProcessPageSequences(pages, total),
+				TaskCreationOptions.AttachedToParent
+				| TaskCreationOptions.LongRunning);
 		}
 
-		private void ProcessPageSequences()
+		private void ProcessPageSequences(int pages, int total)
 		{
-			throw new NotImplementedException();
+			var engine = new PrintSequencesEngine(pages, total);
+			var oddSequence = engine.ComputeOddPrintSequence();
+			var evenSequence = engine.ComputeEvenPrintSequence();
+
+			SetRichTextBoxValue(oddSelectionRichTextBox, string.Join(",", oddSequence.Values));
+			SetRichTextBoxValue(evenSelectionRichTextBox, string.Join(",", evenSequence.Values));
+		}
+
+		private void SetRichTextBoxValue(RichTextBox richTextBox, string value)
+		{
+			richTextBox.Invoke(new Action(() => richTextBox.Text = value));
 		}
 
 		private void pagesPerPage_SelectedIndexChanged(object sender, EventArgs e)

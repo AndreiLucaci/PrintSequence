@@ -83,7 +83,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\PrintSequences.Engine\PrintSequences.Engine.csproj">
+      <Project>{E27D9C6E-038E-4FCA-AACE-5BA84037BB99}</Project>
+      <Name>PrintSequences.Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PrintSequences.Model\PrintSequences.Model.csproj">
+      <Project>{9E2EFF78-7FF2-4C55-B397-9576622DC62E}</Project>
+      <Name>PrintSequences.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -33,10 +33,10 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.evenSelectionRichTextBox = new System.Windows.Forms.RichTextBox();
 			this.oddSelectionRichTextBox = new System.Windows.Forms.RichTextBox();
-			this.rotatingLabel2 = new PrintSequences.Win.Controls.RotatingLabel();
-			this.rotatingLabel1 = new PrintSequences.Win.Controls.RotatingLabel();
 			this.button1 = new System.Windows.Forms.Button();
 			this.pagesPerPage = new System.Windows.Forms.ComboBox();
+			this.rotatingLabel2 = new PrintSequences.Win.Controls.RotatingLabel();
+			this.rotatingLabel1 = new PrintSequences.Win.Controls.RotatingLabel();
 			((System.ComponentModel.ISupportInitialize)(this.totalPages)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -95,6 +95,29 @@
 			this.oddSelectionRichTextBox.Text = "";
 			this.oddSelectionRichTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.RichTextBox_MouseClick);
 			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(224, 12);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(48, 46);
+			this.button1.TabIndex = 8;
+			this.button1.Text = "OK";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
+			// pagesPerPage
+			// 
+			this.pagesPerPage.FormattingEnabled = true;
+			this.pagesPerPage.Items.AddRange(new object[] {
+            "2",
+            "4",
+            "8"});
+			this.pagesPerPage.Location = new System.Drawing.Point(141, 11);
+			this.pagesPerPage.Name = "pagesPerPage";
+			this.pagesPerPage.Size = new System.Drawing.Size(77, 21);
+			this.pagesPerPage.TabIndex = 9;
+			this.pagesPerPage.SelectedIndexChanged += new System.EventHandler(this.pagesPerPage_SelectedIndexChanged);
+			// 
 			// rotatingLabel2
 			// 
 			this.rotatingLabel2.Location = new System.Drawing.Point(12, 64);
@@ -118,32 +141,6 @@
 			this.rotatingLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.rotatingLabel1.TextOrientation = PrintSequences.Win.Controls.Orientation.Rotate;
 			this.rotatingLabel1.TextTextDirection = PrintSequences.Win.Controls.TextDirection.AntiClockwise;
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(224, 12);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(48, 46);
-			this.button1.TabIndex = 8;
-			this.button1.Text = "OK";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// pagesPerPage
-			// 
-			this.pagesPerPage.FormattingEnabled = true;
-			this.pagesPerPage.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "4",
-            "6",
-            "8",
-            "16"});
-			this.pagesPerPage.Location = new System.Drawing.Point(141, 11);
-			this.pagesPerPage.Name = "pagesPerPage";
-			this.pagesPerPage.Size = new System.Drawing.Size(77, 21);
-			this.pagesPerPage.TabIndex = 9;
-			this.pagesPerPage.SelectedIndexChanged += new System.EventHandler(this.pagesPerPage_SelectedIndexChanged);
 			// 
 			// PrintSequenceForm
 			// 

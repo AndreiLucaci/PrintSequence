@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PrintSequences.Engine
+namespace PrintSequences.Model
 {
 	public class PrintSequence
 	{
