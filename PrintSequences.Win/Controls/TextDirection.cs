@@ -1,6 +1,6 @@
 namespace PrintSequences.Win.Controls
 {
-	public enum Direction
+	public enum TextDirection
 	{
 		Clockwise,
 		AntiClockwise

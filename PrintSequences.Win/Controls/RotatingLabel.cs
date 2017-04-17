@@ -10,7 +10,7 @@ namespace PrintSequences.Win.Controls
 		private double _rotationAngle;
 		private string _text;
 		private Orientation _textOrientation;
-		private Direction _textDirection;
+		private TextDirection _textTextDirection;
 
 		public RotatingLabel()
 		{
@@ -42,12 +42,12 @@ namespace PrintSequences.Win.Controls
 		}
 
 		[Description("Direction of the Text"), Category("Appearance")]
-		public Direction TextDirection
+		public TextDirection TextTextDirection
 		{
-			get { return _textDirection; }
+			get { return _textTextDirection; }
 			set
 			{
-				_textDirection = value;
+				_textTextDirection = value;
 				Invalidate();
 			}
 		}

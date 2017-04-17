@@ -1,4 +1,4 @@
-﻿namespace PrintSequences.Win
+﻿namespace PrintSequences.Win.Forms
 {
 	partial class PrintSequenceForm
 	{
@@ -28,8 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-			this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+			this.totalPages = new System.Windows.Forms.NumericUpDown();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.evenSelectionRichTextBox = new System.Windows.Forms.RichTextBox();
@@ -37,30 +36,22 @@
 			this.rotatingLabel2 = new PrintSequences.Win.Controls.RotatingLabel();
 			this.rotatingLabel1 = new PrintSequences.Win.Controls.RotatingLabel();
 			this.button1 = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+			this.pagesPerPage = new System.Windows.Forms.ComboBox();
+			((System.ComponentModel.ISupportInitialize)(this.totalPages)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// numericUpDown1
+			// totalPages
 			// 
-			this.numericUpDown1.Location = new System.Drawing.Point(141, 12);
-			this.numericUpDown1.Name = "numericUpDown1";
-			this.numericUpDown1.Size = new System.Drawing.Size(77, 20);
-			this.numericUpDown1.TabIndex = 0;
-			this.numericUpDown1.Value = new decimal(new int[] {
-            1,
+			this.totalPages.Location = new System.Drawing.Point(141, 38);
+			this.totalPages.Maximum = new decimal(new int[] {
+            999999999,
             0,
             0,
             0});
-			this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-			// 
-			// numericUpDown2
-			// 
-			this.numericUpDown2.Location = new System.Drawing.Point(141, 38);
-			this.numericUpDown2.Name = "numericUpDown2";
-			this.numericUpDown2.Size = new System.Drawing.Size(77, 20);
-			this.numericUpDown2.TabIndex = 1;
-			this.numericUpDown2.Value = new decimal(new int[] {
+			this.totalPages.Name = "totalPages";
+			this.totalPages.Size = new System.Drawing.Size(77, 20);
+			this.totalPages.TabIndex = 1;
+			this.totalPages.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -113,8 +104,8 @@
 			this.rotatingLabel2.TabIndex = 7;
 			this.rotatingLabel2.Text = "Odd sequence";
 			this.rotatingLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.rotatingLabel2.TextDirection = PrintSequences.Win.Controls.Direction.AntiClockwise;
 			this.rotatingLabel2.TextOrientation = PrintSequences.Win.Controls.Orientation.Rotate;
+			this.rotatingLabel2.TextTextDirection = PrintSequences.Win.Controls.TextDirection.AntiClockwise;
 			// 
 			// rotatingLabel1
 			// 
@@ -125,8 +116,8 @@
 			this.rotatingLabel1.TabIndex = 6;
 			this.rotatingLabel1.Text = "Even sequence";
 			this.rotatingLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.rotatingLabel1.TextDirection = PrintSequences.Win.Controls.Direction.AntiClockwise;
 			this.rotatingLabel1.TextOrientation = PrintSequences.Win.Controls.Orientation.Rotate;
+			this.rotatingLabel1.TextTextDirection = PrintSequences.Win.Controls.TextDirection.AntiClockwise;
 			// 
 			// button1
 			// 
@@ -136,12 +127,30 @@
 			this.button1.TabIndex = 8;
 			this.button1.Text = "OK";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
+			// pagesPerPage
+			// 
+			this.pagesPerPage.FormattingEnabled = true;
+			this.pagesPerPage.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "4",
+            "6",
+            "8",
+            "16"});
+			this.pagesPerPage.Location = new System.Drawing.Point(141, 11);
+			this.pagesPerPage.Name = "pagesPerPage";
+			this.pagesPerPage.Size = new System.Drawing.Size(77, 21);
+			this.pagesPerPage.TabIndex = 9;
+			this.pagesPerPage.SelectedIndexChanged += new System.EventHandler(this.pagesPerPage_SelectedIndexChanged);
 			// 
 			// PrintSequenceForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(284, 262);
+			this.Controls.Add(this.pagesPerPage);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.rotatingLabel2);
 			this.Controls.Add(this.rotatingLabel1);
@@ -149,21 +158,17 @@
 			this.Controls.Add(this.evenSelectionRichTextBox);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.numericUpDown2);
-			this.Controls.Add(this.numericUpDown1);
+			this.Controls.Add(this.totalPages);
 			this.Name = "PrintSequenceForm";
 			this.Text = "PrintSequence";
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.totalPages)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.NumericUpDown numericUpDown1;
-		private System.Windows.Forms.NumericUpDown numericUpDown2;
+		private System.Windows.Forms.NumericUpDown totalPages;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.RichTextBox evenSelectionRichTextBox;
@@ -171,6 +176,7 @@
 		private Controls.RotatingLabel rotatingLabel1;
 		private Controls.RotatingLabel rotatingLabel2;
 		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.ComboBox pagesPerPage;
 	}
 }
 
