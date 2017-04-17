@@ -36,24 +36,35 @@
 			this.oddSelectionRichTextBox = new System.Windows.Forms.RichTextBox();
 			this.rotatingLabel2 = new PrintSequences.Win.Controls.RotatingLabel();
 			this.rotatingLabel1 = new PrintSequences.Win.Controls.RotatingLabel();
+			this.button1 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// numericUpDown1
 			// 
-			this.numericUpDown1.Location = new System.Drawing.Point(152, 12);
+			this.numericUpDown1.Location = new System.Drawing.Point(141, 12);
 			this.numericUpDown1.Name = "numericUpDown1";
-			this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+			this.numericUpDown1.Size = new System.Drawing.Size(77, 20);
 			this.numericUpDown1.TabIndex = 0;
+			this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
 			this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
 			// 
 			// numericUpDown2
 			// 
-			this.numericUpDown2.Location = new System.Drawing.Point(152, 38);
+			this.numericUpDown2.Location = new System.Drawing.Point(141, 38);
 			this.numericUpDown2.Name = "numericUpDown2";
-			this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
+			this.numericUpDown2.Size = new System.Drawing.Size(77, 20);
 			this.numericUpDown2.TabIndex = 1;
+			this.numericUpDown2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
 			// 
 			// label1
 			// 
@@ -117,11 +128,21 @@
 			this.rotatingLabel1.TextDirection = PrintSequences.Win.Controls.Direction.AntiClockwise;
 			this.rotatingLabel1.TextOrientation = PrintSequences.Win.Controls.Orientation.Rotate;
 			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(224, 12);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(48, 46);
+			this.button1.TabIndex = 8;
+			this.button1.Text = "OK";
+			this.button1.UseVisualStyleBackColor = true;
+			// 
 			// PrintSequenceForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(284, 262);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.rotatingLabel2);
 			this.Controls.Add(this.rotatingLabel1);
 			this.Controls.Add(this.oddSelectionRichTextBox);
@@ -149,6 +170,7 @@
 		private System.Windows.Forms.RichTextBox oddSelectionRichTextBox;
 		private Controls.RotatingLabel rotatingLabel1;
 		private Controls.RotatingLabel rotatingLabel2;
+		private System.Windows.Forms.Button button1;
 	}
 }
 
