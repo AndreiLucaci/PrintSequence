@@ -2,8 +2,6 @@
 {
 	public enum Orientation
 	{
-		Circle,
-		Arc,
 		Rotate
 	}
 }

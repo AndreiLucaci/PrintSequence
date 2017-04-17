@@ -32,8 +32,10 @@
 			this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-			this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+			this.evenSelectionRichTextBox = new System.Windows.Forms.RichTextBox();
+			this.oddSelectionRichTextBox = new System.Windows.Forms.RichTextBox();
+			this.rotatingLabel2 = new PrintSequences.Win.Controls.RotatingLabel();
+			this.rotatingLabel1 = new PrintSequences.Win.Controls.RotatingLabel();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
 			this.SuspendLayout();
@@ -71,29 +73,59 @@
 			this.label2.TabIndex = 3;
 			this.label2.Text = "Total number of pages";
 			// 
-			// richTextBox1
+			// evenSelectionRichTextBox
 			// 
-			this.richTextBox1.Location = new System.Drawing.Point(51, 64);
-			this.richTextBox1.Name = "richTextBox1";
-			this.richTextBox1.Size = new System.Drawing.Size(224, 90);
-			this.richTextBox1.TabIndex = 4;
-			this.richTextBox1.Text = "";
+			this.evenSelectionRichTextBox.Location = new System.Drawing.Point(51, 160);
+			this.evenSelectionRichTextBox.Name = "evenSelectionRichTextBox";
+			this.evenSelectionRichTextBox.ReadOnly = true;
+			this.evenSelectionRichTextBox.Size = new System.Drawing.Size(221, 90);
+			this.evenSelectionRichTextBox.TabIndex = 4;
+			this.evenSelectionRichTextBox.Text = "";
+			this.evenSelectionRichTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.RichTextBox_MouseClick);
 			// 
-			// richTextBox2
+			// oddSelectionRichTextBox
 			// 
-			this.richTextBox2.Location = new System.Drawing.Point(51, 160);
-			this.richTextBox2.Name = "richTextBox2";
-			this.richTextBox2.Size = new System.Drawing.Size(224, 90);
-			this.richTextBox2.TabIndex = 5;
-			this.richTextBox2.Text = "";
+			this.oddSelectionRichTextBox.Location = new System.Drawing.Point(51, 64);
+			this.oddSelectionRichTextBox.Name = "oddSelectionRichTextBox";
+			this.oddSelectionRichTextBox.ReadOnly = true;
+			this.oddSelectionRichTextBox.Size = new System.Drawing.Size(221, 90);
+			this.oddSelectionRichTextBox.TabIndex = 5;
+			this.oddSelectionRichTextBox.Text = "";
+			this.oddSelectionRichTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.RichTextBox_MouseClick);
+			// 
+			// rotatingLabel2
+			// 
+			this.rotatingLabel2.Location = new System.Drawing.Point(12, 64);
+			this.rotatingLabel2.Name = "rotatingLabel2";
+			this.rotatingLabel2.RotationAngle = 270D;
+			this.rotatingLabel2.Size = new System.Drawing.Size(24, 90);
+			this.rotatingLabel2.TabIndex = 7;
+			this.rotatingLabel2.Text = "Odd sequence";
+			this.rotatingLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.rotatingLabel2.TextDirection = PrintSequences.Win.Controls.Direction.AntiClockwise;
+			this.rotatingLabel2.TextOrientation = PrintSequences.Win.Controls.Orientation.Rotate;
+			// 
+			// rotatingLabel1
+			// 
+			this.rotatingLabel1.Location = new System.Drawing.Point(12, 160);
+			this.rotatingLabel1.Name = "rotatingLabel1";
+			this.rotatingLabel1.RotationAngle = 270D;
+			this.rotatingLabel1.Size = new System.Drawing.Size(24, 90);
+			this.rotatingLabel1.TabIndex = 6;
+			this.rotatingLabel1.Text = "Even sequence";
+			this.rotatingLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.rotatingLabel1.TextDirection = PrintSequences.Win.Controls.Direction.AntiClockwise;
+			this.rotatingLabel1.TextOrientation = PrintSequences.Win.Controls.Orientation.Rotate;
 			// 
 			// PrintSequenceForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(284, 262);
-			this.Controls.Add(this.richTextBox2);
-			this.Controls.Add(this.richTextBox1);
+			this.Controls.Add(this.rotatingLabel2);
+			this.Controls.Add(this.rotatingLabel1);
+			this.Controls.Add(this.oddSelectionRichTextBox);
+			this.Controls.Add(this.evenSelectionRichTextBox);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.numericUpDown2);
@@ -113,8 +145,10 @@
 		private System.Windows.Forms.NumericUpDown numericUpDown2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.RichTextBox richTextBox1;
-		private System.Windows.Forms.RichTextBox richTextBox2;
+		private System.Windows.Forms.RichTextBox evenSelectionRichTextBox;
+		private System.Windows.Forms.RichTextBox oddSelectionRichTextBox;
+		private Controls.RotatingLabel rotatingLabel1;
+		private Controls.RotatingLabel rotatingLabel2;
 	}
 }
 

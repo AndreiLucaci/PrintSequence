@@ -21,5 +21,11 @@ namespace PrintSequences.Win
 		{
 
 		}
+
+		private void RichTextBox_MouseClick(object sender, MouseEventArgs e)
+		{
+			var richTextBox = sender as RichTextBox;
+			richTextBox?.SelectAll();
+		}
 	}
 }
